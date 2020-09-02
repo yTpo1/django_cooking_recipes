@@ -1,4 +1,4 @@
-# Coocking recepies website
+# Cooking Recepies Django Project
 This project was mainly done to get some practice with web development. 
 
 ## Functionality
