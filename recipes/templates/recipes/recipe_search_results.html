@@ -1,0 +1,21 @@
+{% extends "recipes/layout.html" %}
+
+{% block content %}
+
+  <div class="row row-cols-1 row-cols-md-3">
+  {% for recipe in recipes %}
+  <div class="col mb-4">
+    <div class="card h-100">
+      <a href="{% url 'recipe-detail' recipe.id %}" >
+        <img src="{{ recipe.image.url }}" class="card-img-top image-recipe" >
+      </a>
+      <div class="card-body">
+        <h5 class="card-title">{{ recipe.title }}</h5>
+        <p class="card-text">bla bla</p>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+  </div>
+
+{% endblock %}

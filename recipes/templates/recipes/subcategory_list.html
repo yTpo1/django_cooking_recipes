@@ -1,0 +1,18 @@
+{% extends "recipes/layout.html" %}
+
+{% block content %}
+  <h1 class="mt-5">FUCK</h1>
+  <div class="row row-cols-1 row-cols-md-3">
+    {% for subcat in subcategories.category.category_set.all %}
+      {{ subcat }}
+      {{ subcat.name }}
+    {% endfor %}
+  </div>
+  <div class="row row-cols-1 row-cols-md-3">
+    <h3>----</h3>
+    {% for subcat in subcategories %}
+      {{ subcat }}
+      {{ subcat.name }}
+    {% endfor %}
+  </div>
+{% endblock %}

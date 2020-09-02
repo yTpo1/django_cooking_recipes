@@ -1,0 +1,85 @@
+{% extends "recipes/layout.html" %}
+{% load static %}
+
+{% block banner %}
+<!--
+<div class="home-banner" style="background: url({% static "index_page/food1.jpg" %});">
+  <div class="container">
+    <div class="row">
+      <h1>Food Cooking Recipes</h1>
+    </div>
+  </div>
+</div>
+-->
+
+<div class="jumbotron mt-5">
+    <div class="container">
+      <h1 class="display-3">Hello, world!</h1>
+      <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+      <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more »</a></p>
+    </div>
+</div>
+
+<!--
+<div style="background: url({% static "index_page/food1.jpg" %}); background-size: cover; background-repeat: no-repeat; background-position: center;">
+  <div class="container">
+<div class="row">
+          <div class="offset-xl-1 col-xl-10 col-md-12 col-12">
+            <div class="py-13 pt-lg-16 pb-lg-14 text-center text-light">
+              <h1 class="display-3 font-weight-bold text-white mb-2">
+                Become the hero of your own story
+              </h1>
+              <p class="px-lg-14 mb-4 lead">
+                Join our Coach community of like-minded individuals.<br>
+                Get your ticket to the 2020 event.
+              </p>
+              <a href="pages/signin.html" class="btn btn-primary btn-lg">Get Ticket</a>
+            </div>
+          </div>
+        </div>
+  </div>
+</div>
+
+
+<section>
+  <div class="carousel slide">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="{% static "index_page/food1.jpg" %}" class="d-block w-100">
+      </div>
+      <div class="carousel-item">
+        <img src="{% static "index_page/food2.jpg" %}" class="d-block w-100">
+      </div>
+    </div>
+  </div>
+</section>
+
+  <section class="jumbotron text-center">
+    <div class="container py-6 py-md-7 text-white">
+      <div class="row">
+        <div class="col-xl-10">
+          <div class="text-center text-lg-left">
+            <p class="subtitle letter-spacing-4 mb-2 text-secondary text-shadow">The best food you can find</p>
+            <h1 class="display-3 font-weight-bold text-shadow">Stay like a local</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+-->
+{% endblock %}
+
+{% block content %}
+  <h1>index body</h1>
+{% endblock %}
+
+{% block custom_js %}
+<!--
+<script charset="utf-8">
+  $('.carousel').carousel({
+    interval: 2000
+  })
+</script>
+-->
+{% endblock %}

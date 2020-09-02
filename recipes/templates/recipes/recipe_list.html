@@ -1,0 +1,42 @@
+{% extends "recipes/layout.html" %}
+
+{% block content %}
+
+  <div class="row row-cols-1 row-cols-md-3">
+  {% for recipe in recipes %}
+  <div class="col mb-4">
+    <div class="card h-100">
+      <a href="{% url 'recipe-detail' recipe.id %}" >
+        <img src="{{ recipe.image.url }}" class="card-img-top image-recipe" >
+      </a>
+      <div class="card-body">
+        <h5 class="card-title">{{ recipe.title }}</h5>
+        <p class="card-text">
+        <i class="fa fa-clock" aria-hidden="true"></i>
+        {{ recipe.total_time }} mins 
+        <i class="fa fa-utensils" aria-hidden="true"></i> 
+        {{ recipe.difficulty }}
+        </p>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+  </div>
+
+{% endblock %}
+
+{% block custom_js %}
+<script charset="utf-8">
+//  var a = document.getElementsByClassName('card')
+//  var parent = document.getElementsByClassName("row")[0];
+//  for (var i = a.length - 1; i >= 0; i--) {
+//    var wrapper = document.createElement('div');
+//    wrapper.setAttribute("class", "col-sm-6");
+//
+//    var element = document.getElementsByClassName("card")[i];
+//    parent.replaceChild(wrapper, element);
+//    wrapper.appendChild(element);
+//
+//  }
+</script>
+{% endblock %}

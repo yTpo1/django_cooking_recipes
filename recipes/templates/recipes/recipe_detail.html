@@ -1,0 +1,85 @@
+{% extends "recipes/layout.html" %}
+
+{% block content %}
+
+<div class="row" style="/*margin-bottom: 8px;*/">
+    <div class="col shadow pt-3 pl-3 mb-2 bg-white rounded"  > <!-- style="background: yellow;" -->
+      <div style="display: flex;">
+        <h1>{{ recipe.title }}</h1> <!-- style="border-bottom: 1px solid black;" -->
+      <div style="display: flex; justify-content: end; flex-basis: 100%;">
+        <div style="flex-direction: column; text-align: right;">
+          <p style="margin: 0;">By Empty Box Editors	</p>
+          <p>Jan 2, 2020</p>
+        </div>
+      </div>
+      </div>
+    </div>
+</div>
+
+<div class="row" style="margin-bottom: 8px;">
+    <div class="col-md shadow p-3 mb-3 bg-white rounded" style="margin-right: 7px;" > <!-- style="background: grey; border-style: solid;" -->
+        <img class="img-responsive" src="{{ recipe.image.url }}" alt="Card image cap" style="width:100%;">
+
+        <div class="row mt-2">
+            <div class="col border mr-1 ml-1">
+                <i class="fa fa-utensils" aria-hidden="true"></i>
+                <p>Difficulty: {{ recipe.difficulty }}</p>
+            </div>
+            <div class="col border mr-1 ml-1">
+                <i class="fa fa-clock" aria-hidden="true"></i>
+                <p>Prep: {{ recipe.prep_time }} mins</p>
+                <p>Cook: {{ recipe.cook_time }} mins</p>
+                <p>Total: {{ recipe.total_time }} mins</p>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col border mr-1 ml-1">
+              <h4>Categories:</h4>
+              <p>
+              {% for subcat in recipe.subcategories.all %}
+              {{subcat}},
+              {% endfor %}
+              </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-8 shadow p-3 mb-3 bg-white rounded" > <!-- style="background: yellow;" -->
+        <!--<h1>{{ recipe.title }}</h1>--> <!-- style="border-bottom: 1px solid black;" -->
+        <!--<hr>-->
+        <h2><i class="fa fa-cart-plus" aria-hidden="true"></i> Ingredients:</h2>
+        <hr>
+
+        <table class="table table-striped">
+        <tbody>
+            {% for item in ingredient_list %}
+          <tr>
+              <td scope="row" style="font-size: 1.2rem;">{{ item }}</td>
+          </tr>
+            {% endfor %}
+        </tbody>
+        </table>
+          
+        <h2><i class="fa fa-book-open" aria-hidden="true"></i> Cooking Instructions:</h2>
+        <hr>
+        <ol>
+        {% for par in instructions_par %}
+        <li>
+          <p>{{ par }}</p>
+        </li>
+        <hr>
+        {% endfor %}
+        </ol>
+    </div>
+</div>
+
+
+<div class="col-md shadow p-3 mb-3 bg-white rounded" style="margin-right: 7px;" > <!-- style="background: grey; border-style: solid;" -->
+  <h1>{{ recipe.title }}</h1>
+  <hr>
+  <h2>Ingredients</h2>
+  <p>{{ recipe.ingredients|linebreaks }}</p>
+  <h2>Cooking Instructions</h2>
+  <p>{{ recipe.instructions|linebreaks }}</p>
+  <img class="img-responsive" src="{{ recipe.image.url }}" alt="Card image cap" style="width:100%;">
+</div>
+{% endblock %}

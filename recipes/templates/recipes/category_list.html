@@ -1,0 +1,17 @@
+{% extends "recipes/layout.html" %}
+
+{% block content %}
+  <div class="row row-cols-3 mt-5">
+    {% for category in categories %}
+    <div class="col-sm shadow pt-3 pl-3 m-2 bg-white rounded category-block" >
+      <h1 class="h1">{{ category.name }}</h1>
+      <hr/>
+      <ul class="h4 category-list" >
+        {% for subcat in category.subcategory_set.all %}
+        <li><a class="category-item" href={% url 'recipe-category-results' subcat.name %}>{{ subcat.name }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endfor %}
+  </div>
+{% endblock %}
